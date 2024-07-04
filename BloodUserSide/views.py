@@ -35,11 +35,11 @@ def recipient__page(request):
 
 def single_page(request,recid):
     single = RecipientDB.objects.get(id=recid)
-    return render(request,"Single.html",{'single':single})
+    return render(request,"Single_Recpient.html",{'single':single})
 
 def single_donar(request,donarid):
     sing = DonarDB.objects.get(id=donarid)
-    return render(request,"Sing_Donar.html",{'sing':sing})
+    return render(request,"Single_Donar.html",{'sing':sing})
 
 
 # ---------------

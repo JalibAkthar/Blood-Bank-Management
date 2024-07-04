@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>User Side</title>
+    <title>Blood Bank Management</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -131,7 +131,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text text-center">
-                        <h3>View Recipient Details </h3>
+                        <h3>View Donar Details </h3>
                     </div>
                 </div>
             </div>
@@ -147,7 +147,7 @@
                 <div class="col-lg-6 col-md-12" style="margin:auto;">
                     <div class="single_cause">
                         <div class="thumb">
-                            <img src="{{single.R_Profile_Image.url}}" alt="" width="100px;" height="400px;">
+                            <img src="{{sing.Profile_Image.url}}" alt="" width="100px;" height="400px;">
                         </div>
                         <div class="causes_content">
                             <div class="custom_progress_bar">
@@ -160,16 +160,15 @@
                                   </div>
                             </div>
                             <div class="balance d-flex justify-content-between align-items-center">
-                                <span><u style="color:blue;">Blood Group:</u>   {{single.R_Blood_Group}} </span>
+                                <span><u style="color:blue;">Blood Group:</u>   {{sing.Blood_Group}} </span>
                             </div>
-                            <h3><u style="color:blue;">Quantity:</u>   {{single.R_Quantity}}</h3><br>
-                            <h4><u style="color:blue;">Name:</u>   {{single.Recipient_Name}}</h4><br>
-                            <h3><u style="color:blue;">Date:</u>   {{single.R_Date}}</h3><br>
-                            <h3><u style="color:blue;">Age:</u>   {{single.R_Age}} </h3><br>
-                            <h3><u style="color:blue;">Mobile No:</u>   {{single.R_Mobile}}</h3><br>
-                            <h3><u style="color:blue;">Email:</u>   {{single.R_Email}}</h3><br>
-                            <h3><u style="color:blue;">Place:</u>   {{single.R_Place}}</h3><br>
-                            <h2><u style="color:blue;">Address:</u>   {{single.R_Address}}</h2>
+                            <h3><u style="color:blue;">Quantity:</u>   {{sing.Quantity}}</h3>
+                            <h4><u style="color:blue;">Name:</u>   {{sing.Donar_Name}}</h4>
+                            <h3><u style="color:blue;">Age:</u>   {{sing.Age}} </h3><br>
+                            <h3><u style="color:blue;">Mobile No:</u>   {{sing.Mobile}}</h3><br>
+                            <h3><u style="color:blue;">Email:</u>   {{sing.Email}}</h3><br>
+                            <h3><u style="color:blue;">Place:</u>   {{sing.Place}}</h3><br>
+                            <h2><u style="color:blue;">Address:</u>   {{sing.Address}}</h2>
 <!--                            <p></p>-->
 
                         </div>
