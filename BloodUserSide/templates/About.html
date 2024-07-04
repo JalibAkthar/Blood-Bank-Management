@@ -1,0 +1,729 @@
+
+<!doctype html>
+{% load static %}
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>User Side</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'files/img/favicon.png' %}">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'files/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'files/css/style.css' %}">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+        <![endif]-->
+
+
+    <!-- header-start -->
+    <header>
+        <div class="header-area ">
+            <div class="header-top_area">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-md-12 col-lg-8">
+                            <div class="short_contact_list">
+                                <ul>
+<!--                                    <li><a href="#"> <i class="fa fa-phone"></i>{{request.session.L_Mobile}}</a></li>-->
+                                    {% if request.session.L_Email %}
+                                    <li><a href="#"> <i class="fa fa-envelope "></i>{{request.session.L_Email}}</a></li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-6 col-lg-4">
+                            <div class="social_media_links d-none d-lg-block">
+                                <a href="{% url 'logout' %}"><i class="fa fa-user-o"> Logout </i></a>
+<!--                                <a href="{% url 'logout' %}"><i> Logout</i></a>-->
+<!--                                <a href="#">-->
+<!--                                    <i class="fa fa-facebook"></i>-->
+<!--                                </a>-->
+<!--                                <a href="#">-->
+<!--                                    <i class="fa fa-pinterest-p"></i>-->
+<!--                                </a>-->
+<!--                                <a href="#">-->
+<!--                                    <i class="fa fa-linkedin"></i>-->
+<!--                                </a>-->
+<!--                                <a href="#">-->
+<!--                                    <i class="fa fa-twitter"></i>-->
+<!--                                </a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="sticky-header" class="main-header-area" style="background-color:#dc3545">
+                <div class="container-fluid">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="{% static 'files/img/logo.png' %}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a href="{% url 'home_page' %}">home</a></li>
+                                        <li><a href="{% url 'about_page' %}">About</a></li>
+                                        <li><a href="{% url 'donar__page' %}">Donar</a></li>
+                                        <li><a href="{% url 'recipient__page' %}">Recipient</a></li>
+<!--                                        <li><a href="#">pages <i class="ti-angle-down"></i></a>-->
+<!--                                            <ul class="submenu">-->
+<!--                                                <li><a href="elements.html">elements</a></li>-->
+<!--                                                <li><a href="Cause.html">Cause</a></li>-->
+<!--                                            </ul>-->
+<!--                                        </li>-->
+                                        <li><a href="{% url 'contact_page' %}">Contact</a></li>
+
+                                    </ul>
+                                </nav>
+                                <ul>
+                                    <li>
+                                <div class="Appointment">
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a data-scroll-nav='1' href="#" class="pl-3">Donate // Request <i class="ti-angle-down"></i></a>
+                                    </div>
+                                </div>
+                                <ul class="submenu">
+                                                <li><a href="{% url 'adding_donar' %}">donar</a></li>
+                                                <li><a href="{% url 'adding_recipient' %}">recipient</a></li>
+                                            </ul>
+                                    </li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-end -->
+
+    <!-- bradcam_area_start  -->
+    <div class="bradcam_area  overlay d-flex align-items-center justify-content-center"  style="background-image: url({% static '/files/img/blood3.png' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text text-center">
+                        <h3>About US</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bradcam_area_end  -->
+
+    <!-- reson_area_start  -->
+
+            <div class="container">
+            <div>
+                <img src="{% static 'files/img/bd3.jpg' %}" alt="" width="400px;" style="margin-top:200px;">
+            </div>
+
+            <div class="row justify-content-end" style="height:250px;">
+                <div class="col-lg-7">
+                    <div class="activites_info">
+                        <div class="section_title" style="margin-top:-400px;">
+<!--                            <h3> <span>Our Mission</span><br>-->
+                                </h3><br>
+                        </div>
+                        <h2>Our Mission</h2>
+                        <p class="para_1">At BBM, we are driven by a singular mission:
+                            to save lives through the power of voluntary blood donation. We believe in
+                            the profound impact that a simple act of generosity can have on individuals
+                            and communities. Our goal is to connect donors with those in need, creating
+                            a network of compassion that spans across borders.
+                        </p class="para_1"><br>
+                        <h3>Why We Started</h3>
+                        <p class="para_2">BBM was founded with a deep sense of responsibility
+                            and a passion for making a positive difference. Witnessing the critical shortage
+                            of blood in various regions, we recognized the urgent need for a platform that
+                            could bridge the gap between donors and recipients. Every drop of blood donated
+                            has the potential to be a lifeline, and we are dedicated to making this life-saving
+                            resource accessible to all.
+                        </p><br>
+<!--                        <a href="#" data-scroll-nav="1" class="boxed-btn4">Donate Now</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+<!--    <div class="reson_area section_padding">-->
+<!--        <div class="container" style="margin-top:-200px;">-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="section_title text-center mb-55">-->
+<!--                        <h3><span>Activities</span></h3>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="single_reson">-->
+<!--                        <div class="thum">-->
+<!--                            <div class="thum_1">-->
+<!--                                <img src="{% static 'files/img/fund.avif' %}" alt="" height="400px;">-->
+<!--                            </div>-->
+<!--                        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--                        <div class="help_content">-->
+<!--                            <h4>Collecting Fund</h4>-->
+<!--                            <p>A person who gives blood, plasma or cellular components-->
+<!--                                of his or her own free will and receives no payment,-->
+<!--                                either in the form of cash or in kind which is considered-->
+<!--                                a substitute for money. This would include time off work-->
+<!--                                other than that reasonably needed for donation and travel.</p>-->
+<!--                            <a href="#" class="read_more"></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="single_reson">-->
+<!--                        <div class="thum">-->
+<!--                            <div class="thum_1">-->
+<!--                                <img src="{% static 'files/img/bcamp.jpg' %}" alt="" height="400px;">-->
+<!--                            </div>-->
+<!--                        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--                        <div class="help_content">-->
+<!--                            <h4>Blood Camp</h4>-->
+<!--                            <p>Discussion: The purpose of blood donation camp is to select a-->
+<!--                                suitable donor whose blood is safe to the recipients and who-->
+<!--                                himself shall not in any way be harmed by blood donation.-->
+<!--                                Outdoor voluntary blood donation camps in India are organized-->
+<!--                                in three phases. They are pre-camp phase.</p>-->
+<!--                            <a href="#" class="read_more"><a href="{% url 'adding_donar' %}"> </a><a href="{% url 'adding_recipient' %}">  </a></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="single_reson">-->
+<!--                        <div class="thum">-->
+<!--                            <div class="thum_1">-->
+<!--                                <img src="{% static 'files/img/bdvol.avif' %}" alt="" height="400px;">-->
+<!--                            </div>-->
+<!--                        </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>-->
+<!--                        <div class="help_content">-->
+<!--                            <h4>Friendly Volunteer</h4>-->
+<!--                            <p> a person who voluntarily undertakes or expresses a willingness-->
+<!--                                to undertake a service, a one who enters into-->
+<!--                                military service voluntarily. one who renders a service-->
+<!--                                or takes part in a transaction while having no legal concern .-->
+<!--                            a person who performs a service willingly and without pay</p>-->
+<!--                            <a href="#" class="read_more"></a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <!-- reson_area_end  -->
+
+    <!-- latest_activites_area_start  -->
+    <div class="latest_activites_area">
+<!--        <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">-->
+<!--            <a class="popup-video" href="https://www.youtube.com/watch?v=MG3jGHnBVQs">-->
+<!--                <i class="flaticon-ui"></i>-->
+<!--            </a>-->
+<!--        </div>-->
+        <div class="container">
+            <div>
+                <img src="{% static 'files/img/bd6.png' %}" alt="" width="400px;" style="margin-top:200px;">
+            </div>
+
+            <div class="row justify-content-end" style="height:250px;">
+                <div class="col-lg-7">
+                    <div class="activites_info">
+                        <div class="section_title" style="margin-top:-700px;">
+                            <h2> <span>Our Approach</span><br>
+                                </h2><br>
+                        </div>
+                        <h3>Transparency and Trust</h3>
+                        <p class="para_1">We believe in transparency and accountability. That's why we
+                            strive to maintain the highest standards of integrity in all our operations.
+                            From the moment you land on our website to the actual blood donation process,
+                            we want you to feel confident and secure.
+                        </p class="para_1">
+                        <h3>Connecting Communities</h3>
+                        <p class="para_2">Charift is more than just a platform; it's a community
+                            of compassionate individuals committed to making a difference. We connect donors
+                            with local blood banks, hospitals, and organizations, fostering a sense of unity
+                            that transcends geographical boundaries.
+                        </p><br>
+<!--                        <a href="#" data-scroll-nav="1" class="boxed-btn4">Donate Now</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+
+            <div class="row justify-content-end" style="height:250px;">
+                <div class="col-lg-7">
+<!--                    <div class="activites_info">-->
+<!--                        <div class="section_title" style="margin-top:-700px;">-->
+<!--                            <h3> <span>Blood Donation</span><br>-->
+<!--                                </h3><br>-->
+<!--                        </div>-->
+<!--                        <h4>Benefits of blood donation</h4>-->
+<!--                        <p class="para_1">Regular blood donation helps maintain healthy iron levels in the body,-->
+<!--                            reducing the risk of conditions like hemochromatosis. It can also serve as a health check,-->
+<!--                            as each donated unit undergoes rigorous testing for infectious diseases,-->
+<!--                            ensuring the donor's well-being.</p class="para_1">-->
+<!--                        <h4>Does giving blood detox your body</h4>-->
+<!--                        <p class="para_2">The body can detoxify itself naturally (e.g., with help from your liver),-->
+<!--                            but giving blood may help your body's detoxing potential. For example, blood (and plasma)-->
+<!--                            donations have been shown to have an effect on the levels of perfluoroalkyl and-->
+<!--                            polyfluoroalkyl substances (PFASs).</p><br>-->
+<!--&lt;!&ndash;                        <a href="#" data-scroll-nav="1" class="boxed-btn4">Donate Now</a>&ndash;&gt;-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+
+        <div class="latest_activites_area" style="background-color:white; margin-top:-300px">
+<!--        <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">-->
+<!--            <a class="popup-video" href="https://www.youtube.com/watch?v=MG3jGHnBVQs">-->
+<!--                <i class="flaticon-ui"></i>-->
+<!--            </a>-->
+<!--        </div>-->
+        <div class="container">
+            <div>
+                <img src="{% static 'files/img/bd10.jpg' %}" alt="" width="400px;" style="margin-top:200px;">
+            </div>
+
+            <div class="row justify-content-end" style="height:250px;">
+                <div class="col-lg-7">
+                    <div class="activites_info">
+                        <div class="section_title" style="margin-top:-600px;">
+<!--                            <h3> <span>Blood Donation</span><br>-->
+<!--                                </h3><br>-->
+                        </div>
+                        <h3>How You Can Help</h3>
+                        <p class="para_1">The success of our mission depends on individuals like you.
+                            Whether you're considering becoming a donor, volunteering your time, or
+                            spreading the word about the importance of blood donation, there are numerous
+                            ways you can contribute. Together, we can create a world where no one has
+                            to suffer due to a lack of blood supply.
+                        </p class="para_1">
+                        <h3>Get Involved</h3>
+                        <p class="para_2">Ready to join us on this life-saving journey? Explore our website
+                            to learn more about the donation process, find local events, and discover
+                            how you can make a difference today.
+                        </p><br>
+<!--                        <a href="#" data-scroll-nav="1" class="boxed-btn4">Donate Now</a>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- latest_activites_area_end  -->
+
+    <!-- counter_area_start  -->
+    <div class="counter_area pt-120">
+        <div class="container">
+            <div class="counter_bg ">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_counter d-flex align-items-center justify-content-center">
+                            <div class="icon">
+                                <i class="flaticon-calendar"></i>
+                            </div>
+                            <div class="events">
+                                <h3 class="counter">120</h3>
+                                <p>Finished Event</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_counter d-flex align-items-center justify-content-center">
+                            <div class="icon">
+                                <i class="flaticon-heart-beat"></i>
+                            </div>
+                            <div class="events">
+                                <h3 class="counter">120</h3>
+                                <p>Finished Event</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_counter d-flex align-items-center justify-content-center">
+                            <div class="icon">
+                                <i class="flaticon-in-love"></i>
+                            </div>
+                            <div class="events">
+                                <h3 class="counter">120</h3>
+                                <p>Finished Event</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="single_counter d-flex align-items-center justify-content-center">
+                            <div class="icon">
+                                <i class="flaticon-hug"></i>
+                            </div>
+                            <div class="events">
+                                <h3 class="counter">120</h3>
+                                <p>Finished Event</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- counter_area_end  -->
+
+    <!-- our_volunteer_area_start  -->
+    <div class="our_volunteer_area section_padding">
+<!--        <div class="container">-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="section_title text-center mb-55">-->
+<!--                        <h3><span>Our Volunteer</span></h3>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="single_volenteer">-->
+<!--                        <div class="volenteer_thumb">-->
+<!--                            <img src="{% static 'files/img/volenteer/1.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="voolenteer_info d-flex align-items-end">-->
+<!--                            <div class="social_links">-->
+<!--                                <ul>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-facebook"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-twitter"></i> </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="info_inner">-->
+<!--                                <h4>Sakil khan</h4>-->
+<!--                                <p>Donner</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="single_volenteer">-->
+<!--                        <div class="volenteer_thumb">-->
+<!--                            <img src="{% static 'files/img/volenteer/2.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="voolenteer_info d-flex align-items-end">-->
+<!--                            <div class="social_links">-->
+<!--                                <ul>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-facebook"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-twitter"></i> </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="info_inner">-->
+<!--                                <h4>Emran Ahmed</h4>-->
+<!--                                <p>Volunteer</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="col-lg-4 col-md-6">-->
+<!--                    <div class="single_volenteer">-->
+<!--                        <div class="volenteer_thumb">-->
+<!--                            <img src="{% static 'files/img/volenteer/3.png' %}" alt="">-->
+<!--                        </div>-->
+<!--                        <div class="voolenteer_info d-flex align-items-end">-->
+<!--                            <div class="social_links">-->
+<!--                                <ul>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-facebook"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-pinterest"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-linkedin"></i> </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#"> <i class="fa fa-twitter"></i> </a>-->
+<!--                                    </li>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                            <div class="info_inner">-->
+<!--                                <h4>Sabbir Ahmed</h4>-->
+<!--                                <p>Volunteer</p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+    <!-- our_volunteer_area_end  -->
+
+
+<!--    <div data-scroll-index='1' class="make_donation_area section_padding">-->
+<!--        <div class="container">-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <div class="section_title text-center mb-55">-->
+<!--                        <h3><span>Make a Donation</span></h3>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row justify-content-center">-->
+<!--                <div class="col-lg-6">-->
+<!--                    <form action="#" class="donation_form">-->
+<!--                        <div class="row align-items-center">-->
+<!--                            <div class="col-md-4">-->
+<!--                                <div class="single_amount">-->
+<!--                                    <div class="input_field">-->
+<!--                                        <div class="input-group">-->
+<!--                                            <div class="input-group-prepend">-->
+<!--                                              <span class="input-group-text" id="basic-addon1">$</span>-->
+<!--                                            </div>-->
+<!--                                            <input type="text" class="form-control" placeholder="40,200" aria-label="Username" aria-describedby="basic-addon1">-->
+<!--                                          </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-8">-->
+<!--                                <div class="single_amount">-->
+<!--                                   <div class="fixed_donat d-flex align-items-center justify-content-between">-->
+<!--                                       <div class="select_prise">-->
+<!--                                           <h4>Select Amount:</h4>-->
+<!--                                       </div>-->
+<!--                                        <div class="single_doonate">-->
+<!--                                            <input type="radio" id="blns_1" name="radio-group" checked>-->
+<!--                                            <label for="blns_1">10</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="single_doonate">-->
+<!--                                            <input type="radio" id="blns_2" name="radio-group" checked>-->
+<!--                                            <label for="blns_2">30</label>-->
+<!--                                        </div>-->
+<!--                                        <div class="single_doonate">-->
+<!--                                            <input type="radio" id="Other" name="radio-group" checked>-->
+<!--                                            <label for="Other">Other</label>-->
+<!--                                        </div>-->
+<!--                                   </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="row">-->
+<!--                <div class="col-12">-->
+<!--                    <div class="donate_now_btn text-center">-->
+<!--                        <a href="#" class="boxed-btn4">Donate Now</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+    <!-- footer_start  -->
+    <footer class="footer">
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5 col-md-6 col-lg-4 " >
+                        <div class="footer_widget">
+                            <div class="footer_logo">
+                                <a href="#">
+                                    <img src="{% static 'files/img/footer_logo.png' %}" alt="">
+                                </a>
+                            </div>
+                            <p class="address_text">At BBM, we are driven by a singular <br> mission: to save lives through the power <br> of voluntary blood donation. We believe  <br> in the profound impact that a simple act  <br> of generosity can have on individuals <br> and communities.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-md-6 col-lg-2" >
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Services
+                            </h3>
+                            <ul class="links">
+                                <li><a href="#">Blood Donate</a></li>
+                                <li><a href="#">Blood Request</a></li>
+                                <li><a href="#">Fund Collection</a></li>
+                                <li><a href="#">Blood Camp</a></li>
+                                <li><a href="#">Volunteer</a></li>
+<!--                                <li><a href="#">Jobs</a></li>-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-md-6 col-lg-3" >
+                        <div class="footer_widget">
+                            <h3 class="footer_title">
+                                Contacts
+                            </h3>
+                            <div class="contacts">
+                                <p>+91 859 309 8661 <br>
+                                    jalibpc22@gmail.com <br>
+                                    Kakkanad , Kochi <br>
+                                    Kerala,
+                                </p>
+                                <div class="socail_links">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="fa fa-dribbble"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.instagram.com/jaalliib/">
+                                            <i class="fa fa-instagram"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+<!--                    <div class="col-xl-3 col-md-6 col-lg-3">-->
+<!--                        <div class="footer_widget">-->
+<!--&lt;!&ndash;                            <h3 class="footer_title">Top News</h3>&ndash;&gt;-->
+<!--                            <ul class="news_links">-->
+<!--                                <li>-->
+<!--                                    <div class="thumb">-->
+<!--                                        <a href="#">-->
+<!--                                            <img src="{% static 'files/img/bd4.jpg' %}" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                    <div class="info">-->
+<!--                                        <a href="#">-->
+<!--                                            <h4>School for African-->
+<!--                                                Childrens</h4>-->
+<!--                                        </a>-->
+<!--                                        <span>Jun 12, 2019</span>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+<!--                                <li>-->
+<!--                                    <div class="thumb">-->
+<!--                                        <a href="#">-->
+<!--                                            <img src="{% static 'files/img/bloood.jpg' %}" alt="">-->
+<!--                                        </a>-->
+<!--                                    </div>-->
+<!--                                    <div class="info">-->
+<!--                                        <a href="#">-->
+<!--                                            <h4>School for African-->
+<!--                                                Childrens</h4>-->
+<!--                                        </a>-->
+<!--                                        <span>Jun 12, 2019</span>-->
+<!--                                    </div>-->
+<!--                                </li>-->
+<!--                            </ul>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+<!--        <div class="copy-right_text">-->
+<!--            <div class="container">-->
+<!--                <div class="row">-->
+<!--                    <div class="bordered_1px "></div>-->
+<!--                    <div class="col-xl-12">-->
+<!--                        <p class="copy_right text-center">-->
+<!--                            <p>&lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;-->
+<!--  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>-->
+<!--  &lt;!&ndash; Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. &ndash;&gt;</p>-->
+<!--                        </p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </footer>
+    <!-- footer_end  -->
+
+    <!-- link that opens popup -->
+
+    <!-- JS here -->
+    <script src="{% static 'files/js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <script src="{% static 'files/js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'files/js/popper.min.js' %}"></script>
+    <script src="{% static 'files/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'files/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'files/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'files/js/ajax-form.js' %}"></script>
+    <script src="{% static 'files/js/waypoints.min.js' %}"></script>
+    <script src="{% static 'files/js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'files/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'files/js/scrollIt.js' %}"></script>
+    <script src="{% static 'files/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'files/js/wow.min.js' %}"></script>
+    <script src="{% static 'files/js/nice-select.min.js' %}"></script>
+    <script src="{% static 'files/js/jquery.slicknav.min.js' %}"></script>
+    <script src="{% static 'files/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'files/js/plugins.js' %}"></script>
+    <script src="{% static 'files/js/gijgo.min.js' %}"></script>
+    <!--contact js-->
+    <script src="{% static 'files/js/contact.js' %}"></script>
+    <script src="{% static 'files/js/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'files/js/jquery.form.js' %}"></script>
+    <script src="{% static 'files/js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'files/js/mail-script.js' %}"></script>
+
+    <script src="{% static 'files/js/main.js' %}"></script>
+</body>
+
+</html>

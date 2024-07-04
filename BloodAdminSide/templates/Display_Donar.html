@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+{% extends 'iindexx.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Side</title>
+</head>
+<body>
+<div style="margin-left:150px; margin-top:10px;">
+      <div class="col-sm-10">
+          <div class="card">
+            <div class="card-body">
+                <div class="card-title" style="margin-left:300px;"><h4><u>DISPLAY DONAR DETAILS</u></h4></div><br>
+			  <div class="table-responsive">
+               <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">DONAR NAME</th>
+                      <th scope="col">AGE</th>
+                      <th scope="col">MOBILE</th>
+                      <th scope="col">BLOOD GROUP</th>
+                      <th scope="col">BLOOD QUANTITY</th>
+                      <th scope="col">EMAIL</th>
+                      <th scope="col">PLACE </th>
+                      <th scope="col">ADDRESS</th>
+                      <th scope="col">PROFILE IMAGE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for i in Donar %}
+                    <tr>
+<!--                      <th scope="row">1</th>-->
+                      <td>{{i.Donar_Name}}</td>
+                      <td>{{i.Age}}</td>
+                      <td>{{i.Mobile}}</td>
+                      <td>{{i.Blood_Group}}</td>
+                      <td>{{i.Quantity}}</td>
+                      <td>{{i.Email}}</td>
+                      <td>{{i.Place}}</td>
+                      <td>{{i.Address}}</td>
+                      <td>
+                          <img src="{{i.Profile_Image.url}}" width="100px;" height="100px;">
+                      </td>
+                        <td>
+                            <form action="{% url 'edit_donar' dataid=i.id %}">
+                                <button class="btn btn-light px-5">Edit</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form action="{% url 'delete_donar' dataid=i.id %}">
+                                <button class="btn btn-light px-5">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                  {% endfor %}
+<!--                    <tr>-->
+<!--                      <th scope="row">2</th>-->
+<!--                      <td>Jacob</td>-->
+<!--                      <td>Thornton</td>-->
+<!--                      <td>@fat</td>-->
+<!--                    </tr>-->
+<!--                    <tr>-->
+<!--                      <th scope="row">3</th>-->
+<!--                      <td>Larry</td>-->
+<!--                      <td>the Bird</td>-->
+<!--                      <td>@twitter</td>-->
+<!--                    </tr>-->
+                  </tbody>
+                </table>
+            </div>
+            </div>
+          </div>
+        </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+{% if messages %}
+    {% for i in messages %}
+        {% if i.tags == 'warning' %}
+            <script>
+                swal('{{i}}','','warning');
+            </script>
+        {% elif i.tags == 'error' %}
+            <script>
+                swal('{{i}}','','error');
+            </script>
+        {% elif i.tags == 'success' %}
+            <script>
+                swal('{{i}}','','success');
+            </script>
+        {% else %}
+            <script>
+                swal('{{i}}','','info');
+            </script>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+
+</body>
+</html>
+{% endblock %}

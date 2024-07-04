@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% extends 'iindexx.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Side</title>
+</head>
+<body>
+<div>
+    <div class="col-lg-8" style="margin-left:200px; margin-top:10px;">
+         <div class="card">
+           <div class="card-body">
+               <div class="card-title" style="margin-left:250px;"><h4><u>EDIT RECIPIENT DETAILS</u></h4></div>
+           <hr><br>
+            <form method="post" action="{% url 'update_recipient' dataid=Recipient.id %}" enctype="multipart/form-data">
+                {% csrf_token %}
+           <div class="form-group">
+            <label for="input-1"> Recipient Name</label>
+            <input type="text" class="form-control" id="input-1" placeholder="Enter Your Name" name="r_name" value="{{Recipient.Recipient_Name}}">
+           </div>
+                <div class="form-group">
+            <label for="input-3">Age</label>
+            <input type="number" class="form-control" id="input-3" placeholder="Enter Your Age" name="r_age" value="{{Recipient.R_Age}}">
+           </div>
+                <div class="form-group">
+            <label for="input-3">Mobile</label>
+            <input type="text" class="form-control" id="input-3" placeholder="Enter Your Mobile Number" name="r_mobile" value="{{Recipient.R_Mobile}}">
+           </div>
+                <div class="form-group">
+                    <label for="input-3">Blood Group</label>
+                    <select class="form-control" name="r_blood">
+<!--                        <option>Select Your Blood Group</option>-->
+                        <option>{{Recipient.R_Blood_Group}}</option>
+                    <option>O+</option>
+                    <option>O-</option>
+                    <option>A+</option>
+                    <option>A-</option>
+                    <option>B+</option>
+                    <option>B-</option>
+                    <option>AB+</option>
+                    <option>AB-</option>
+                </select>
+                </div><br>
+
+             <div class="form-group">
+            <label for="input-2">Quantity</label>
+            <input type="text" class="form-control" id="input-2" placeholder="Enter Quantity" name="r_quantity">
+           </div>
+
+
+            <div class="form-group">
+            <label for="input-2">Date</label>
+            <input type="date" class="form-control" id="input-2"  name="r_date" value="{{Recipient.R_Date}}">
+           </div>
+
+           <div class="form-group">
+            <label for="input-2">Email</label>
+            <input type="text" class="form-control" id="input-2" placeholder="Enter Your Email Address" name="r_email" value="{{Recipient.R_Email}}">
+           </div>
+
+           <div class="form-group">
+            <label for="input-1">Place</label>
+            <input type="text" class="form-control" id="input-1" placeholder="Enter Your Place" name="r_place" value="{{Recipient.R_Place}}">
+           </div>
+           <div class="form-group">
+            <label>Address</label>
+               <textarea class="form-control" placeholder="Enter Your Address" style="height:100px;" name="r_address">{{Recipient.R_Address}}</textarea>
+<!--            <input type="text" class="form-control" id="input-5" placeholder="Confirm Password">-->
+           </div>
+                <div class="form-group">
+            <label for="input-1">Profile Image</label><br>
+                    <img src="{{Recipient.R_Profile_Image.url}}" width="100px;" height="100px;">
+            <input type="file" class="form-control" id="input-1" name="r_image">
+           </div>
+<!--           <div class="form-group py-2">-->
+<!--             <div class="icheck-material-white">-->
+<!--            <input type="checkbox" id="user-checkbox1" checked="">-->
+<!--            <label for="user-checkbox1">I Agree Terms &amp; Conditions</label>-->
+<!--            </div>-->
+<!--           </div>-->
+           <div class="form-group">
+            <button type="submit" class="btn btn-light px-5"><i class="icon-lock"></i> Update</button>
+          </div>
+          </form>
+         </div>
+         </div>
+      </div>
+
+</div>
+</body>
+</html>
+{% endblock %}
